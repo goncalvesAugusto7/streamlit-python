@@ -7,8 +7,53 @@ import matplotlib.pyplot as plt
 # A função st.write() é usada para adicionar qualquer coisa em um web app
 # Toda vez que algo precisar ser atualizado na tela, o Streamlit roda novamente o script interio de cima para baixo
 
+# Title
+st.title("Streamlit Charts Demo")
 
+# Generate sample data
+chartData = pd.DataFrame(
+    data=np.random.randn(20,3),
+    columns=['A','B','C']
+)
 
+# Area Chart Section
+st.subheader("Area Chart")
+st.area_chart(chartData)
+
+# Bar Chart Section
+st.subheader("Bar Chart")
+st.bar_chart(chartData)
+
+# Line Chart
+st.subheader("Bar Chart")
+st.line_chart(chartData)
+
+# Scatter Chart Section
+st.subheader("Scatter Chart")
+scatterData = pd.DataFrame({
+    'x': np.random.randn(100),
+    'y': np.random.randn(100)
+})
+st.scatter_chart(scatterData)
+
+#Map Section (displaying random points on a map)
+st.subheader("Map")
+mapData = pd.DataFrame(
+    np.random.randn(100,2) / [300,300] + [-2.559064, -44.307042],
+    columns=['lat','lon']
+
+)
+st.map(mapData)
+
+# Pyplot Section
+st.subheader("Pyplot Chart")
+fig, ax = plt.subplots()
+ax.plot(chartData['A'], label='A')
+ax.plot(chartData['B'], label='B')
+ax.plot(chartData['C'], label='C')
+ax.set_title("Pyplot Line Chart")
+ax.legend()
+st.pyplot(fig)
 
 
 # # Title
@@ -48,20 +93,3 @@ import matplotlib.pyplot as plt
 
 # # Also show it as dictionary
 # st.write("Dictionary view:",sampleDict)
-
-
-
-# st.title("I Am A Title")
-# st.header("I am a header")
-# st.subheader("I am a subheader")
-# st.markdown("I am a _Markdown_")
-# st.caption("I am a caption")
-# code_example = '''
-# def greet(name):
-#     print("hello, ", name)
-# '''
-# st.code(code_example)
-
-# st.divider()
-
-# st.image(os.path.join(os.getcwd(), "static", "penny.png"), width=250)
