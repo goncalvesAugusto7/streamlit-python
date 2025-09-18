@@ -1,6 +1,9 @@
 import streamlit as st
 import os
 
+# A função st.write() é usada para adicionar qualquer coisa em um web app
+# Toda vez que algo precisar ser atualizado na tela, o Streamlit roda novamente o script interio de cima para baixo
+
 st.title("I Am A Title")
 st.header("I am a header")
 st.subheader("I am a subheader")
