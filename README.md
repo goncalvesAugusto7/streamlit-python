@@ -1,2 +1,3 @@
 # streamlit-python
-uma aplicação de teste usando a biblioteca streamlite de python para montagem de interface gráfica
+
+este é um compilado de arquivos com funções básicas da biblioteca streamlit do python para criação de interfaces gráficas
